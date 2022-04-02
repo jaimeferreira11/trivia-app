@@ -28,6 +28,7 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": ""
+    "description": "El proyecto forma parte del desafío técnico de Softec.\nCrear una aplicación de trivia de 10 preguntas (opción múltiple) con React Native.",
+    "githubUrl": "https://github.com/jaimeferreira11/trivia-app"
   }
 }

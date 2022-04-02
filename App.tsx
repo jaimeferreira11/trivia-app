@@ -1,17 +1,19 @@
-import { StyleSheet, Text, View } from "react-native";
+import React, { useReducer } from "react";
+import Navigation from "./src/navigation/Navigation";
+import { AppContext } from "./src/context/AppContext";
+import { appReducer } from "./src/context/appReducer";
+import { Answer } from "./src/interfaces/interfaces";
 
-import React from "react";
-import Navigation from "./src/navigations/Navigation";
+const initialState = {
+  answerList: [] as Answer[],
+};
 
 export default function App() {
-  return <Navigation></Navigation>;
-}
+  const [state, dispatch] = useReducer(appReducer, initialState);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+  return (
+    <AppContext.Provider value={{ state, dispatch }}>
+      <Navigation />
+    </AppContext.Provider>
+  );
+}
